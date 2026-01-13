@@ -1,68 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@theme {
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-main);
+
+  --color-card: var(--color-bg-secondary);
+  --color-card-foreground: var(--color-text-main);
+
+  --color-popover: var(--color-bg-secondary);
+  --color-popover-foreground: var(--color-text-main);
+
+  --color-primary: var(--color-accent);
+  --color-primary-foreground: var(--color-text-inverse);
+
+  --color-secondary: var(--color-bg-tertiary);
+  --color-secondary-foreground: var(--color-text-main);
+
+  --color-muted: var(--color-bg-tertiary);
+  --color-muted-foreground: var(--color-text-muted);
+
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-text-inverse);
+
+  --color-destructive: var(--color-status-error);
+  --color-destructive-foreground: var(--color-text-main);
+
+  --color-border: var(--color-border);
+  --color-input: var(--color-bg-input);
+  --color-ring: var(--color-accent-ring);
+
+  --color-success: var(--color-status-success);
+  --color-warning: var(--color-status-warning);
+  --color-info: var(--color-status-info);
+  --color-error: var(--color-status-error);
+
+  --animate-in: enter 150ms ease-out;
+  --animate-out: exit 150ms ease-in;
+
+  --animate-accordion-down: accordion-down 0.3s ease-out;
+  --animate-accordion-up: accordion-up 0.3s ease-out;
+  --animate-check-zoom-in: check-zoom-in 200ms ease-out;
+  --animate-check-zoom-out: check-zoom-out 200ms ease-out;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-switch-background: var(--color-bg-switch);
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* --- 1. Backgrounds --- */
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #18181b;
+  --color-bg-tertiary: #27272a;
+  --color-bg-input: #18181b;
+  --color-bg-switch: #27272a;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* --- 2. Typography --- */
+  --color-text-main: #fafafa;
+  --color-text-muted: #a1a1aa;
+  --color-text-inverse: #09090b;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* --- 3. Actions & Accents --- */
+  --color-accent: #fafafa;
+  --color-accent-hover: #d4d4d8;
+  --color-accent-light: #52525b;
+  --color-accent-dark: #ffffff;
+  --color-accent-glow: rgba(255, 255, 255, 0.1);
+  --color-accent-ring: #fafafa;
+
+  /* --- 4. Borders & Lines --- */
+  --color-border: #27272a;
+  --radius: 24px;
+
+  /* --- 5. Status Indicators --- */
+  --color-status-success: #34d399;
+  --color-status-error: #f87171;
+  --color-status-warning: #fbbf24;
+  --color-status-info: #60a5fa;
+
+  /* --- 6. Charts --- */
+  --color-chart-1: #fafafa;
+  --color-chart-2: #d4d4d8;
+  --color-chart-3: #a1a1aa;
+  --color-chart-4: #52525b;
+  --color-chart-5: #27272a;
+
+  /* --- 7. Sidebar --- */
+  --color-sidebar-bg: #09090b;
+  --color-sidebar-fg: #fafafa;
+  --color-sidebar-primary: #fafafa;
+  --color-sidebar-primary-fg: #09090b;
+  --color-sidebar-accent: #18181b;
+  --color-sidebar-accent-fg: #fafafa;
+  --color-sidebar-border: #27272a;
+  --color-sidebar-ring: #fafafa;
+
+  /* --- 8. Specifics --- */
+  --font-display: 'Inter', sans-serif;
+  
+  /* Buttons */
+  --color-btn-secondary-bg: #27272a;
+  --color-btn-secondary-hover: #3f3f46;
+  --color-btn-secondary-text: #fafafa;
+  
+  --color-btn-destructive-bg: #7f1d1d;
+  --color-btn-destructive-hover: #991b1b;
+  --color-btn-destructive-text: #ffffff;
+  
+  --color-btn-ghost-hover-bg: rgba(255, 255, 255, 0.1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  button {
-    background-color: #f9f9f9;
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+}
+
+/* Animations */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes exit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes check-zoom-in {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes check-zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
   }
 }
