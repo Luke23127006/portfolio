@@ -1,4 +1,6 @@
 import { Award, Trophy } from 'lucide-react';
+import { ContentCard } from '../../components/commons/ContentCard';
+import { AwardItem } from '../../components/commons/AwardItem';
 
 export function Awards() {
   const awards = [
@@ -23,37 +25,20 @@ export function Awards() {
   ];
 
   return (
-    <div className="h-full border border-border bg-card p-6 rounded-[var(--radius)] hover:border-muted transition-colors">
+    <ContentCard className="p-6">
       <h3 className="font-['Inter'] text-lg font-semibold mb-6 text-foreground">Awards</h3>
       
       <div className="space-y-4">
-        {awards.map((award, index) => {
-          const Icon = award.icon;
-          return (
-            <div 
-              key={index}
-              className="border border-border bg-secondary p-4 rounded-lg"
-            >
-              <div className="flex items-start gap-3">
-                <div className="p-2 bg-muted rounded-lg">
-                  <Icon className="w-4 h-4 text-foreground" />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-['Inter'] font-semibold text-sm mb-1 text-foreground">
-                    {award.title}
-                  </h4>
-                  <p className="font-['JetBrains_Mono'] text-xs text-muted-foreground">
-                    {award.organization}
-                  </p>
-                  <p className="font-['JetBrains_Mono'] text-xs text-muted-foreground mt-1">
-                    {award.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        {awards.map((award, index) => (
+          <AwardItem
+            key={index}
+            icon={award.icon}
+            title={award.title}
+            organization={award.organization}
+            year={award.year}
+          />
+        ))}
       </div>
-    </div>
+    </ContentCard>
   );
 }

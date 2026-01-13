@@ -6,11 +6,11 @@ function App() {
   return (
     <ThemeProvider>
       <div className="portfolio-wrapper min-h-screen">
-        <header className="p-4 md:p-8 flex justify-end">
+        <header className="py-8 flex justify-end">
           <ThemeSwitcher />
         </header>
 
-        <main className="container px-4 md:px-8 pb-4 md:pb-8">
+        <main className="px-4 md:px-8 pb-4 md:pb-8">
           <PortfolioPage />
         </main>
       </div>

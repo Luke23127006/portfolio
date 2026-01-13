@@ -1,3 +1,6 @@
+import { ContentCard } from '../../components/commons/ContentCard';
+import { TechItem } from '../../components/commons/TechItem';
+
 export function TechStack() {
   const technologies = [
     { name: 'React', category: 'Frontend' },
@@ -15,7 +18,7 @@ export function TechStack() {
   ];
 
   return (
-    <div className="border border-border bg-card p-6 rounded-[var(--radius)] hover:border-muted transition-colors">
+    <ContentCard className="p-6">
       <div className="mb-6">
         <h3 className="font-['Inter'] text-lg font-semibold mb-1 text-foreground">Tech Stack</h3>
         <p className="font-['JetBrains_Mono'] text-xs text-muted-foreground">Primary tools & technologies</p>
@@ -23,21 +26,13 @@ export function TechStack() {
       
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
         {technologies.map((tech) => (
-          <div 
+          <TechItem
             key={tech.name}
-            className="border border-border bg-secondary p-4 rounded-lg hover:border-muted transition-colors group"
-          >
-            <div className="flex flex-col h-full">
-              <span className="font-['Inter'] font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-colors">
-                {tech.name}
-              </span>
-              <span className="font-['JetBrains_Mono'] text-xs text-muted-foreground mt-auto">
-                {tech.category}
-              </span>
-            </div>
-          </div>
+            name={tech.name}
+            category={tech.category}
+          />
         ))}
       </div>
-    </div>
+    </ContentCard>
   );
 }

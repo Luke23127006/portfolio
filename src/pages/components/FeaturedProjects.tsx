@@ -1,5 +1,5 @@
-import { ExternalLink, Github } from 'lucide-react';
-import { ImageWithFallback } from '../../components/ImageWithFallback';
+import { ContentCard } from '../../components/commons/ContentCard';
+import { ProjectCard } from '../../components/commons/ProjectCard';
 
 export function FeaturedProjects() {
   const projects = [
@@ -30,7 +30,7 @@ export function FeaturedProjects() {
   ];
 
   return (
-    <div className="border border-border bg-card p-6 rounded-[var(--radius)] hover:border-muted transition-colors">
+    <ContentCard className="p-6">
       <div className="mb-6">
         <h3 className="font-['Inter'] text-lg font-semibold mb-1 text-foreground">Featured Projects</h3>
         <p className="font-['JetBrains_Mono'] text-xs text-muted-foreground">Recent work & contributions</p>
@@ -38,61 +38,17 @@ export function FeaturedProjects() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, index) => (
-          <div 
+          <ProjectCard
             key={index}
-            className="border border-border bg-secondary rounded-lg overflow-hidden hover:border-muted transition-colors group"
-          >
-            {/* Project Image */}
-            <div className="relative aspect-video overflow-hidden bg-background">
-              <ImageWithFallback
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            
-            {/* Project Info */}
-            <div className="p-5">
-              <h4 className="font-['Inter'] font-semibold text-base mb-2 text-foreground">
-                {project.title}
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              
-              {/* Tech Stack Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech) => (
-                  <span 
-                    key={tech}
-                    className="font-['JetBrains_Mono'] text-xs px-2 py-1 bg-muted border border-border rounded text-muted-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              {/* Links */}
-              <div className="flex gap-3 pt-4 border-t border-border">
-                <a 
-                  href={project.github}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  <span className="font-['JetBrains_Mono'] text-xs">Code</span>
-                </a>
-                <a 
-                  href={project.live}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span className="font-['JetBrains_Mono'] text-xs">Live Demo</span>
-                </a>
-              </div>
-            </div>
-          </div>
+            title={project.title}
+            description={project.description}
+            tech={project.tech}
+            image={project.image}
+            github={project.github}
+            live={project.live}
+          />
         ))}
       </div>
-    </div>
+    </ContentCard>
   );
 }

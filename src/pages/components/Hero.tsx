@@ -1,13 +1,14 @@
 import { ArrowUpRight } from 'lucide-react';
+import { ContentCard } from '../../components/commons/ContentCard';
+import { StatusBadge } from '../../components/commons/StatusBadge';
+import { Button } from '../../components/ui/Button';
 
 export function HeroCard() {
   return (
-    <div className="h-full border border-border bg-card p-8 rounded-[var(--radius)] hover:border-muted transition-colors">
+    <ContentCard className="p-8">
       <div className="flex flex-col justify-between h-full">
         <div>
-          <div className="inline-block px-3 py-1 border border-border rounded-full mb-4">
-            <span className="font-['JetBrains_Mono'] text-xs text-muted-foreground">Available for hire</span>
-          </div>
+          <StatusBadge text="Available for hire" className="mb-4" />
           <h1 className="font-['Inter'] text-4xl md:text-5xl font-bold mb-3 tracking-tight text-foreground">
             Alex Chen
           </h1>
@@ -21,21 +22,15 @@ export function HeroCard() {
         </div>
         
         <div className="flex gap-4 mt-8">
-          <a 
-            href="#" 
-            className="inline-flex items-center bg-primary gap-2 px-6 py-3 bg-red text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-['Inter'] font-medium"
-          >
+          <Button href="#" variant="primary">
             View Resume
             <ArrowUpRight className="w-4 h-4" />
-          </a>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-muted transition-colors font-['Inter'] font-medium"
-          >
+          </Button>
+          <Button href="#" variant="secondary">
             Contact Me
-          </a>
+          </Button>
         </div>
       </div>
-    </div>
+    </ContentCard>
   );
 }

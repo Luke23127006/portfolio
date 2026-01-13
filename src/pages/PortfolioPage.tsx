@@ -1,9 +1,8 @@
-import { GithubStats } from './components/GithubStats';
 import { TechStack } from './components/TechStack';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { Awards } from './components/Awards';
-import { HeroCard } from './components/HeroCard';
-import { ContactCard } from './components/ContactCard';
+import { HeroCard } from './components/Hero';
+import { ContactCard } from './components/Contact';
 
 export default function PortfolioPage() {
   return (
@@ -11,14 +10,9 @@ export default function PortfolioPage() {
       <div className="max-w-7xl mx-auto">
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-auto">
-          {/* Hero Card - spans 2 columns */}
-          <div className="md:col-span-2 lg:col-span-2">
+          {/* Hero Card - spans 3 columns */}
+          <div className="md:col-span-2 lg:col-span-3">
             <HeroCard />
-          </div>
-          
-          {/* Github Stats - spans 1 column, tall */}
-          <div className="lg:col-span-1 md:row-span-2">
-            <GithubStats />
           </div>
           
           {/* Contact Card - spans 1 column */}
@@ -31,8 +25,8 @@ export default function PortfolioPage() {
             <TechStack />
           </div>
           
-          {/* Awards - spans 1 column */}
-          <div className="lg:col-span-1">
+          {/* Awards - spans 2 columns */}
+          <div className="md:col-span-2 lg:col-span-2">
             <Awards />
           </div>
           
