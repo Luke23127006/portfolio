@@ -1,28 +1,8 @@
-import { Award, Trophy } from 'lucide-react';
 import { ContentCard } from '../../components/commons/ContentCard';
 import { AwardItem } from '../../components/commons/AwardItem';
+import { awards } from '../../data/awards';
 
 export function Awards() {
-  const awards = [
-    {
-      title: 'Best Web App',
-      organization: 'TechCrunch',
-      year: '2025',
-      icon: Trophy,
-    },
-    {
-      title: 'Innovation Award',
-      organization: 'React Conf',
-      year: '2024',
-      icon: Award,
-    },
-    {
-      title: 'Top Contributor',
-      organization: 'Open Source',
-      year: '2023',
-      icon: Award,
-    },
-  ];
 
   return (
     <ContentCard className="p-6">

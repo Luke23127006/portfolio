@@ -8,16 +8,15 @@ export function HeroCard() {
     <ContentCard className="p-8">
       <div className="flex flex-col justify-between h-full">
         <div>
-          <StatusBadge text="Available for hire" className="mb-4" />
+          <StatusBadge text="Open to Internship - HCMC, VN" className="mb-4" />
           <h1 className="font-['Inter'] text-4xl md:text-5xl font-bold mb-3 tracking-tight text-foreground">
-            Alex Chen
+            Tran Nguyen Khai Luan
           </h1>
           <h2 className="font-['Inter'] text-xl md:text-2xl text-muted-foreground mb-6">
-            Senior React Engineer
+            Software Developer
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-xl">
-            Crafting performant, scalable web applications with modern React ecosystems. 
-            Specializing in TypeScript, state management, and component architecture.
+            I aim to become a professional software developer after graduation by joining real projects, building reliable applications, and keeping up with new technologies to improve my skills and gain industry experience. I also want to learn from colleagues and grow through teamwork.
           </p>
         </div>
         

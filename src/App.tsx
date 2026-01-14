@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="portfolio-wrapper min-h-screen">
-        <header className="py-8 flex justify-end">
+        <header className="pt-4 flex justify-end px-8 md:px-16">
           <ThemeSwitcher />
         </header>
 

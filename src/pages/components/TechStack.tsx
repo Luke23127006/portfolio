@@ -1,21 +1,8 @@
 import { ContentCard } from '../../components/commons/ContentCard';
 import { TechItem } from '../../components/commons/TechItem';
+import { technologies } from '../../data/techStack';
 
 export function TechStack() {
-  const technologies = [
-    { name: 'React', category: 'Frontend' },
-    { name: 'TypeScript', category: 'Language' },
-    { name: 'Next.js', category: 'Framework' },
-    { name: 'Node.js', category: 'Backend' },
-    { name: 'GraphQL', category: 'API' },
-    { name: 'TailwindCSS', category: 'Styling' },
-    { name: 'Redux', category: 'State Mgmt' },
-    { name: 'Jest', category: 'Testing' },
-    { name: 'Docker', category: 'DevOps' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Git', category: 'Version Control' },
-  ];
 
   return (
     <ContentCard className="p-6">
