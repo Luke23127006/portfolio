@@ -72,9 +72,7 @@ export function ProjectCard({
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Youtube className="w-4 h-4" />
-              <span className="font-['JetBrains_Mono'] text-xs">
-                Demo Video
-              </span>
+              <span className="font-['JetBrains_Mono'] text-xs">Video</span>
             </Link>
           )}
           {live && (
@@ -85,7 +83,7 @@ export function ProjectCard({
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              <span className="font-['JetBrains_Mono'] text-xs">Live Demo</span>
+              <span className="font-['JetBrains_Mono'] text-xs">Live</span>
             </Link>
           )}
         </div>
