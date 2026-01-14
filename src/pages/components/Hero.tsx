@@ -4,7 +4,7 @@ import { StatusBadge } from "../../components/commons/StatusBadge";
 import { Button } from "../../components/ui/Button";
 
 const cv =
-  "https://drive.google.com/file/d/1MTWu3qYabFaJp-125wuz8P6RUgx03nhc/view?usp=sharing";
+  "https://drive.google.com/drive/folders/18G2s3QC8iWanNK49Q_EJNH2If8N5eRiZ?usp=sharing";
 
 export function HeroCard() {
   return (
